@@ -29,13 +29,49 @@ export default function HomePage() {
           </div>
 
           <div className="hero__visual" aria-hidden="true">
-            <div className="hero__visual-mark">
-              <MarkCompass size={240} color="var(--lt-foundation)" strokeWidth={4} />
+            <div className="hero__visual-brief">
+              <span className="hero__visual-meta">// CLIENT BRIEF · 6 min ago</span>
+              <p>“10 days, coast and mountains. Nature, food. Something authentic — not too much driving.”</p>
             </div>
-            <div className="hero__visual-card">
-              <span style={{ color: "var(--lt-ember-deep)" }}>Draft · 12-day coastal + highlands route</span>
-              <strong>“Nature, food, something authentic — not too much driving.”</strong>
-              <span>Routed · 4 regions · 11 partners · 6 min to first draft</span>
+
+            <div className="hero__visual-itinerary">
+              <div className="hero__visual-itinerary-head">
+                <span className="hero__visual-meta">// DRAFT · DAY 3 OF 10</span>
+                <span className="hero__visual-tag">Soča valley</span>
+              </div>
+
+              <div className="hero__visual-row">
+                <span className="hero__visual-dot hero__visual-dot--curated" />
+                <div>
+                  <strong>Lunch · Hiša Polonka</strong>
+                  <em>advisor note · ask for the štruklji, not on the menu</em>
+                </div>
+              </div>
+
+              <div className="hero__visual-row">
+                <span className="hero__visual-dot hero__visual-dot--curated" />
+                <div>
+                  <strong>Walk · Tolminska korita</strong>
+                  <em>curated route · 1.4 km loop, slow pace</em>
+                </div>
+              </div>
+
+              <div className="hero__visual-row">
+                <span className="hero__visual-dot" />
+                <div>
+                  <strong>Stay · Nebesa Boutique</strong>
+                  <em>partner supplier · 2 rooms held</em>
+                </div>
+              </div>
+
+              <div className="hero__visual-foot">
+                <span><span className="hero__visual-bullet" /> Curated · 3 of 3 picks</span>
+                <span>Routed · 11 partners · 6 min draft</span>
+              </div>
+            </div>
+
+            <div className="hero__visual-mark" aria-hidden="true">
+              <MarkCompass size={88} color="var(--lt-foundation)" strokeWidth={2.5} />
             </div>
           </div>
         </div>
@@ -129,7 +165,7 @@ export default function HomePage() {
           {/* Featured Curate step */}
           <div className="workflow__featured">
             <div className="workflow__featured-head">
-              <span className="workflow__step workflow__step--accent">00 — Curate · Foundational</span>
+              <span className="workflow__featured-tag">00 — Curate · Foundational</span>
               <h3 className="workflow__title" style={{ fontSize: "var(--text-2xl)" }}>
                 Build your knowledge layer before any traveler asks a question.
               </h3>
@@ -319,6 +355,63 @@ export default function HomePage() {
                 <p className="lt-body" style={{ fontSize: "var(--text-sm)" }}>{d.b}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open by design — integrations */}
+      <section className="section section--tight">
+        <div className="container">
+          <div className="open">
+            <div className="open__head">
+              <p className="open__eyebrow">Open by design</p>
+              <h2 className="lt-h2">
+                Works with the tools{" "}
+                <span className="lt-display-italic">you already use.</span>
+              </h2>
+              <p className="lt-lede">
+                LoreTrip is bring-your-own infrastructure. Your maps provider, your reviews
+                signal, your supplier APIs, your payment rails, your model key. Your data stays
+                yours. Nothing is locked behind us.
+              </p>
+            </div>
+
+            <div className="open__grid">
+              <div className="open__cell">
+                <p className="open__cell-eyebrow">Maps & routes</p>
+                <p className="open__cell-name">Google Maps</p>
+                <p className="lt-meta">Routing, drive times, place data — your key, your billing.</p>
+              </div>
+              <div className="open__cell">
+                <p className="open__cell-eyebrow">Reviews · signal only</p>
+                <p className="open__cell-name">Google Reviews</p>
+                <p className="lt-meta">Used as a sanity check, never as the source of truth.</p>
+              </div>
+              <div className="open__cell">
+                <p className="open__cell-eyebrow">Inventory</p>
+                <p className="open__cell-name">Supplier &amp; booking APIs</p>
+                <p className="lt-meta">Booking.com, Expedia, your direct supplier feeds.</p>
+              </div>
+              <div className="open__cell">
+                <p className="open__cell-eyebrow">Payment</p>
+                <p className="open__cell-name">Stripe</p>
+                <p className="lt-meta">Service fees, deposits, multi-currency invoicing.</p>
+              </div>
+              <div className="open__cell">
+                <p className="open__cell-eyebrow">Operations</p>
+                <p className="open__cell-name">Calendar &amp; CRM</p>
+                <p className="lt-meta">Google Calendar, Outlook, HubSpot, Salesforce.</p>
+              </div>
+              <div className="open__cell open__cell--feature">
+                <p className="open__cell-eyebrow">Your model</p>
+                <p className="open__cell-name">Bring-your-own AI key</p>
+                <p className="lt-meta">Anthropic Claude by default. Route through your own keys; we don't gatekeep.</p>
+              </div>
+            </div>
+
+            <p className="lt-meta open__foot">
+              Mentioned only where it matters. We add integrations when an agency asks — not before.
+            </p>
           </div>
         </div>
       </section>
