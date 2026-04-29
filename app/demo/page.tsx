@@ -103,22 +103,29 @@ export default function DemoPage() {
   return (
     <>
       <section className="page-head container">
-        <p className="lt-eyebrow">Live white-label demo</p>
+        <p className="lt-eyebrow">See it in action</p>
         <h1 className="lt-h1">
-          A working deployment, for a real agency:{" "}
+          mijn Slovenië —{" "}
+          <span className="lt-display-italic">where LoreTrip was born.</span>
+        </h1>
+        <p className="lt-lede">
           <Link
             href="https://www.mijnslovenie.com"
             target="_blank"
             rel="noreferrer"
-            style={{ fontStyle: "italic", color: "var(--lt-ember-deep)", borderBottom: "1px solid currentColor" }}
+            style={{ color: "var(--lt-ember-deep)", borderBottom: "1px solid currentColor" }}
           >
-            mijnslovenie.com
-          </Link>.
-        </h1>
-        <p className="lt-lede">
-          mijnslovenie.com is a Dutch-speaking specialist agency for trips to Slovenia. The
-          screens below are their LoreTrip deployment — branded as theirs, end to end. Same
-          platform, different brand. That is the product.
+            mijn Slovenië
+          </Link>{" "}
+          is a specialist Dutch travel agency focused exclusively on Slovenia. It is also where
+          LoreTrip was built — to solve the agency's own challenge of delivering curated,
+          high-quality trip advice at scale without losing the personal touch that defines the
+          brand.
+        </p>
+        <p className="lt-body" style={{ maxWidth: "62ch" }}>
+          The screens below show how mijn Slovenië uses LoreTrip to turn deep local knowledge
+          into AI-powered itineraries that reflect what the agency genuinely believes is the best
+          way to experience Slovenia.
         </p>
       </section>
 
@@ -193,6 +200,72 @@ export default function DemoPage() {
           {adminFlow.map((s) => (
             <ShotRow key={s.src} shot={s} />
           ))}
+        </div>
+      </section>
+
+      <section className="section" style={{ background: "var(--lt-foundation)", color: "var(--lt-linen)", marginTop: 64 }}>
+        <div className="container">
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 760, marginBottom: 48 }}>
+            <p className="lt-eyebrow" style={{ color: "var(--lt-ember-soft)" }}>Curation in practice</p>
+            <h2 className="lt-h2" style={{ color: "var(--lt-linen)" }}>
+              Four moments where the curated layer{" "}
+              <span className="lt-display-italic">changes the answer.</span>
+            </h2>
+            <p className="lt-body" style={{ color: "var(--lt-foundation-30)", maxWidth: "62ch" }}>
+              Real examples from the mijn Slovenië deployment. Same traveler question, different
+              answer — because the agency's curated knowledge is what the AI reaches for first.
+            </p>
+          </div>
+
+          <div className="example-grid">
+            <article className="example">
+              <p className="lt-eyebrow" style={{ color: "var(--lt-ember-soft)" }}>Restaurant · Ljubljana</p>
+              <h3 className="example__title">A confident pick over a popular one.</h3>
+              <p className="lt-body" style={{ color: "var(--lt-foundation-30)" }}>
+                A generic planner recommends the restaurant on the main square — 2,400 reviews,
+                4.6 rating. mijn Slovenië recommends the place in a side street with 180 reviews
+                that the team has eaten at 30 times — the chef sources from Karst farms, the
+                portions are honest, and it's where they take their own visitors. Curated in the
+                dashboard, prioritised by the AI, served as a confident, branded recommendation.
+              </p>
+            </article>
+
+            <article className="example">
+              <p className="lt-eyebrow" style={{ color: "var(--lt-ember-soft)" }}>Partner · Soča Valley</p>
+              <h3 className="example__title">A relationship, encoded.</h3>
+              <p className="lt-body" style={{ color: "var(--lt-foundation-30)" }}>
+                A traveler asks for "something active near the mountains." A generic planner
+                returns the most-reviewed rafting company. mijn Slovenië's curated layer surfaces
+                the outfitter they have worked with for years — reliable equipment,
+                English-speaking guides, pickup from the right trailhead. Not an algorithm. A
+                relationship, encoded.
+              </p>
+            </article>
+
+            <article className="example">
+              <p className="lt-eyebrow" style={{ color: "var(--lt-ember-soft)" }}>Modification · Vipava Valley</p>
+              <h3 className="example__title">Customisation, without quality drift.</h3>
+              <p className="lt-body" style={{ color: "var(--lt-foundation-30)" }}>
+                A traveler loves the 10-day "Wine & Nature" package but wants to extend by two
+                days and swap the city day for more countryside. The AI adjusts the itinerary —
+                but the wine tastings it suggests for the extra days still come from mijn
+                Slovenië's curated list of producers. The quality does not drift just because the
+                traveler customised.
+              </p>
+            </article>
+
+            <article className="example">
+              <p className="lt-eyebrow" style={{ color: "var(--lt-ember-soft)" }}>Package flexibility</p>
+              <h3 className="example__title">From 80%-right to 100%-right.</h3>
+              <p className="lt-body" style={{ color: "var(--lt-foundation-30)" }}>
+                The traveler browses a pre-built 8-day itinerary. It's 80% right — but they would
+                rather skip the cave visit and add a cycling day. LoreTrip handles the swap,
+                pulls from the agency's vetted cycling routes and bike rental partners, and
+                regenerates the daily flow. The result feels personally crafted, because the
+                building blocks were personally chosen.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
