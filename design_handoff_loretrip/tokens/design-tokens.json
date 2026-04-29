@@ -1,0 +1,88 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "name": "LoreTrip Design Tokens",
+  "version": "1.0.0",
+  "color": {
+    "foundation": {
+      "value": "#070D14",
+      "description": "Primary ink. Near-black with cool/blue undertone. Used for text, dark surfaces, the logo mark."
+    },
+    "foundation-90": { "value": "#1a2028" },
+    "foundation-70": { "value": "#4a5058", "description": "Muted ink; secondary text on light." },
+    "foundation-50": { "value": "#7a7f86", "description": "Tertiary text; captions, metadata." },
+    "foundation-30": { "value": "#b3b6ba" },
+    "foundation-10": { "value": "#e0e1e3" },
+    "ember": {
+      "value": "#D17252",
+      "description": "Signature accent. Soft ember. Use sparingly: highlights, single key CTAs, the o in the wordmark."
+    },
+    "ember-deep": { "value": "#b85d3f", "description": "Hover/pressed for ember CTAs." },
+    "ember-soft": { "value": "#e8a48d" },
+    "ember-wash": { "value": "#f7e8e0" },
+    "linen": { "value": "#F2F0EC", "description": "Page background. Warm oat, slightly cool." },
+    "surface": { "value": "#FBFAF6", "description": "Card / elevated surface on linen." },
+    "surface-2": { "value": "#ffffff", "description": "Highest-elevation surface; modals, popovers." },
+    "rule": { "value": "#d9d6d0", "description": "Hairline rules." },
+    "slate": { "value": "#5B7B6D", "description": "Secondary illustrative accent. Cool sage-slate." },
+    "brass": { "value": "#B58F4A", "description": "Partner badges, premium tier markers." },
+    "sage":  { "value": "#9CB096", "description": "Success states; nature-coded UI." },
+    "success": { "value": "#5C8A6B" },
+    "warning": { "value": "#C99A4D" },
+    "error":   { "value": "#B45448" },
+    "info":    { "value": "#5B7B96" }
+  },
+  "font": {
+    "display": { "value": "'Playfair Display', Georgia, serif" },
+    "body":    { "value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" },
+    "mono":    { "value": "'JetBrains Mono', 'SF Mono', Menlo, monospace" }
+  },
+  "fontSize": {
+    "xs":   { "value": "12px" },
+    "sm":   { "value": "14px" },
+    "base": { "value": "16px" },
+    "lg":   { "value": "18px" },
+    "xl":   { "value": "22px" },
+    "2xl":  { "value": "28px" },
+    "3xl":  { "value": "36px" },
+    "4xl":  { "value": "48px" },
+    "5xl":  { "value": "64px" },
+    "6xl":  { "value": "88px" }
+  },
+  "lineHeight": {
+    "tight":   { "value": 1.1 },
+    "snug":    { "value": 1.25 },
+    "normal":  { "value": 1.5 },
+    "relaxed": { "value": 1.65 }
+  },
+  "letterSpacing": {
+    "tight":  { "value": "-0.02em" },
+    "normal": { "value": "0" },
+    "wide":   { "value": "0.08em" },
+    "wider":  { "value": "0.16em" }
+  },
+  "radius": {
+    "sm": { "value": "2px" },
+    "md": { "value": "4px" },
+    "lg": { "value": "8px" },
+    "xl": { "value": "12px" },
+    "pill": { "value": "999px" }
+  },
+  "spacing": {
+    "0": { "value": "0" },
+    "1": { "value": "4px" },
+    "2": { "value": "8px" },
+    "3": { "value": "12px" },
+    "4": { "value": "16px" },
+    "5": { "value": "24px" },
+    "6": { "value": "32px" },
+    "7": { "value": "48px" },
+    "8": { "value": "64px" },
+    "9": { "value": "96px" },
+    "10": { "value": "128px" }
+  },
+  "shadow": {
+    "sm": { "value": "0 1px 2px rgba(7, 13, 20, 0.04)" },
+    "md": { "value": "0 4px 12px rgba(7, 13, 20, 0.06)" },
+    "lg": { "value": "0 12px 32px rgba(7, 13, 20, 0.08)" }
+  }
+}

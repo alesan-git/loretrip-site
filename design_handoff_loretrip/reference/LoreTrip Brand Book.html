@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LoreTrip — Brand Book</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --ink: #0F1B2A;
+    --ink-soft: #2A3A4D;
+    --muted: #6A7787;
+    --border: #E2DED3;
+    --bg-warm: #F2F0EC;
+    --surface: #FBFAF6;
+    --terracotta: #C95F3D;
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg-warm); }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  * { box-sizing: border-box; }
+  ::selection { background: var(--terracotta); color: #fff; }
+
+  /* Side rail nav */
+  .siderail {
+    position: fixed; left: 32px; top: 50%; transform: translateY(-50%);
+    z-index: 100; display: flex; flex-direction: column; gap: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    mix-blend-mode: difference; color: rgba(255,255,255,0.55);
+  }
+  .siderail a { color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.15s; }
+  .siderail a:hover { opacity: 1; }
+  @media (max-width: 1100px) { .siderail { display: none; } }
+</style>
+</head>
+<body>
+
+<nav class="siderail">
+  <a href="#positioning">01 Positioning</a>
+  <a href="#logo">02 Logo</a>
+  <a href="#color">03 Color</a>
+  <a href="#type">04 Type</a>
+  <a href="#voice">05 Voice</a>
+  <a href="#visual">06 Visual</a>
+  <a href="#application">07 In Use</a>
+</nav>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="marks.jsx"></script>
+<script type="text/babel" src="dashboard.jsx"></script>
+<script type="text/babel" src="sections-1.jsx"></script>
+<script type="text/babel" src="sections-2.jsx"></script>
+<script type="text/babel" src="sections-3.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "markVariant": "compass",
+  "terracotta": "#D17252",
+  "foundation": "#070d14",
+  "showBookmarks": true
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  // Push tokens into CSS variables and a window object the components consume.
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty('--terracotta', t.terracotta);
+    root.style.setProperty('--ink', t.foundation);
+  }, [t.terracotta, t.foundation]);
+
+  window.__tokens = {
+    ink: t.foundation,
+    surface: '#FFFFFF',
+    bgWarm: '#FAF7F2',
+    border: '#E8ECE8',
+    muted: '#6F8378',
+    terracotta: t.terracotta,
+  };
+
+  const { Hero, Positioning, LogoSection, ColorSection, TypographySection, VoiceSection, VisualLanguageSection, ApplicationSection, Closer } = window;
+
+  return (
+    <>
+      <Hero tweaks={t} />
+      <Positioning />
+      <LogoSection tweaks={t} setTweak={setTweak} />
+      <ColorSection tweaks={t} setTweak={setTweak} />
+      <TypographySection />
+      <VoiceSection />
+      <VisualLanguageSection />
+      <ApplicationSection tweaks={t} />
+      <Closer tweaks={t} />
+
+      <TweaksPanel>
+        <TweakSection label="Logo mark" />
+        <TweakRadio
+          label="Variant"
+          value={t.markVariant}
+          options={['compass', 'route', 'serif']}
+          onChange={(v) => setTweak('markVariant', v)}
+        />
+
+        <TweakSection label="Color" />
+        <TweakColor
+          label="Terracotta"
+          value={t.terracotta}
+          onChange={(v) => setTweak('terracotta', v)}
+        />
+        <TweakColor
+          label="Foundation"
+          value={t.foundation}
+          onChange={(v) => setTweak('foundation', v)}
+        />
+
+        <TweakSection label="Presets" />
+        <TweakButton
+          label="Navy + ember (default)"
+          onClick={() => setTweak({ terracotta: '#C95F3D', foundation: '#0F1B2A' })}
+        />
+        <TweakButton
+          label="Forest + soft clay (v1)"
+          onClick={() => setTweak({ terracotta: '#CC7A5C', foundation: '#1F2D26' })}
+        />
+        <TweakButton
+          label="Brass + bistre"
+          onClick={() => setTweak({ terracotta: '#B8865A', foundation: '#2B2118' })}
+        />
+      </TweaksPanel>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>

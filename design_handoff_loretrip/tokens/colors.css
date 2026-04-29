@@ -1,0 +1,58 @@
+/* LoreTrip — Color tokens
+ * Paste into app/globals.css inside :root { ... }
+ * Final approved palette. Do not introduce new colors without brand approval.
+ */
+
+:root {
+  /* ── Foundation ─────────────────────────────────── */
+  --lt-foundation: #070D14;        /* Primary ink; near-black with cool undertone. Use for text, dark surfaces, logo. */
+  --lt-foundation-90: #1a2028;     /* Slightly lifted foundation for hover states on dark surfaces */
+  --lt-foundation-70: #4a5058;     /* Muted ink; secondary text on light surfaces */
+  --lt-foundation-50: #7a7f86;     /* Tertiary text; metadata, captions */
+  --lt-foundation-30: #b3b6ba;     /* Borders on dark surfaces, dividers */
+  --lt-foundation-10: #e0e1e3;     /* Subtle borders on light surfaces */
+
+  /* ── Signature accent ────────────────────────────── */
+  --lt-ember: #D17252;             /* Soft ember; signature accent. Use sparingly: highlights, single key CTAs, the "o" in the wordmark. */
+  --lt-ember-deep: #b85d3f;        /* Hover/pressed state for ember CTAs */
+  --lt-ember-soft: #e8a48d;        /* Subtle ember tint; backgrounds, illustrations */
+  --lt-ember-wash: #f7e8e0;        /* Very subtle ember background; hover rows, highlight strips */
+
+  /* ── Neutrals ────────────────────────────────────── */
+  --lt-linen: #F2F0EC;             /* Page background; warm-but-cool oat */
+  --lt-surface: #FBFAF6;           /* Card / elevated surface on linen */
+  --lt-surface-2: #ffffff;         /* Pure white for highest-elevation surfaces (modals, popovers) */
+  --lt-rule: #d9d6d0;              /* Hairline rules on light surfaces */
+
+  /* ── Secondary system (use sparingly, agency-context only) ── */
+  --lt-slate: #5B7B6D;             /* Cool sage-slate; secondary illustrative accent */
+  --lt-brass: #B58F4A;             /* Warm metallic; partner badges, premium tier markers */
+  --lt-sage: #9CB096;              /* Soft sage; success states, nature-coded UI */
+
+  /* ── Functional ──────────────────────────────────── */
+  --lt-success: #5C8A6B;
+  --lt-warning: #C99A4D;
+  --lt-error: #B45448;
+  --lt-info: #5B7B96;
+}
+
+/* ── Dark surface inversions ────────────────────────── */
+.lt-on-foundation {
+  background: var(--lt-foundation);
+  color: var(--lt-linen);
+  --lt-rule: #2a313a;
+  --lt-surface: #0f1620;
+  --lt-surface-2: #141c27;
+}
+
+/* ── Semantic aliases (recommended for component code) ── */
+:root {
+  --color-bg: var(--lt-linen);
+  --color-surface: var(--lt-surface);
+  --color-text: var(--lt-foundation);
+  --color-text-muted: var(--lt-foundation-70);
+  --color-text-subtle: var(--lt-foundation-50);
+  --color-accent: var(--lt-ember);
+  --color-accent-hover: var(--lt-ember-deep);
+  --color-rule: var(--lt-rule);
+}

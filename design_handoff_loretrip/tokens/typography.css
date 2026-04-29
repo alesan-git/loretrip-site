@@ -1,0 +1,104 @@
+/* LoreTrip — Typography tokens
+ * Self-host via next/font/google — DO NOT use Google Fonts CDN in production
+ * (privacy + reliability + Vercel edge caching benefit).
+ */
+
+/* In Next.js App Router, replace these @import declarations with:
+ *
+ *   import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
+ *   const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400','500'], style: ['normal','italic'], variable: '--font-display' });
+ *   const inter    = Inter({ subsets: ['latin'], weight: ['400','500','600'], variable: '--font-body' });
+ *   const mono     = JetBrains_Mono({ subsets: ['latin'], weight: ['400','500'], variable: '--font-mono' });
+ *
+ * Then add `${playfair.variable} ${inter.variable} ${mono.variable}` to the body className.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ── Families ──────────────────────────────────────── */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  /* ── Type scale (modular, ratio ~1.25) ─────────────── */
+  --text-xs:    12px;   /* metadata, captions, mono labels */
+  --text-sm:    14px;   /* secondary UI text */
+  --text-base:  16px;   /* body */
+  --text-lg:    18px;   /* lead paragraphs */
+  --text-xl:    22px;   /* small headlines */
+  --text-2xl:   28px;   /* section headers */
+  --text-3xl:   36px;   /* page subheads */
+  --text-4xl:   48px;   /* page heads */
+  --text-5xl:   64px;   /* display */
+  --text-6xl:   88px;   /* hero display */
+
+  /* ── Line heights ──────────────────────────────────── */
+  --leading-tight:  1.1;     /* display headlines */
+  --leading-snug:   1.25;    /* subheads */
+  --leading-normal: 1.5;     /* body */
+  --leading-relaxed: 1.65;   /* long-form reading */
+
+  /* ── Tracking ──────────────────────────────────────── */
+  --track-tight: -0.02em;
+  --track-normal: 0;
+  --track-wide: 0.08em;       /* small caps, eyebrows */
+  --track-wider: 0.16em;      /* mono labels, tags */
+}
+
+/* ── Recommended type primitives ──────────────────── */
+
+.lt-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--track-tight);
+}
+
+.lt-display-italic {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--track-tight);
+}
+
+.lt-h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--track-tight);
+}
+
+.lt-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+}
+
+.lt-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.lt-lede {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--lt-foundation-70);
+}
+
+.lt-meta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  color: var(--lt-foundation-50);
+}
